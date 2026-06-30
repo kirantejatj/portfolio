@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Mail, Sparkles } from "lucide-react";
-import FloatingOrbs from "./FloatingOrbs";
 import { staggerContainer, fadeUp } from "../utils/motionVariants";
 
 const roles = ["Oracle Apps DBA", "SQL Server DBA", "Python Django Developer"];
@@ -17,7 +16,6 @@ function Hero() {
       id="home"
       className="relative min-h-screen mesh-bg flex items-center justify-center overflow-hidden"
     >
-      <FloatingOrbs />
       <div className="absolute inset-0 grid-overlay pointer-events-none" />
 
       {/* Orbiting ring decoration */}

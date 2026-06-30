@@ -1,3 +1,4 @@
+import AnimatedBackground from "../components/AnimatedBackground";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
@@ -9,6 +10,8 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <>
+      <AnimatedBackground />
+
       <Navbar />
       <Hero />
       <About />
