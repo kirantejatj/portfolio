@@ -69,10 +69,14 @@ function initCanvas() {
     mouse.y = null;
   });
 
-  // Resize Handler
-  window.addEventListener('resize', () => {
+  // Resize & Orientation Handlers
+  const handleCanvasResize = () => {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
+  };
+  window.addEventListener('resize', handleCanvasResize);
+  window.addEventListener('orientationchange', () => {
+    setTimeout(handleCanvasResize, 150);
   });
 
   class Particle {
@@ -768,6 +772,15 @@ function initMobileNav() {
       if (icon) icon.className = 'fa-solid fa-bars';
     }
   });
+
+  // Auto-close drawer when tapping any link inside the mobile menu
+  navUl.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navUl.classList.remove('open');
+      const icon = toggleBtn.querySelector('i');
+      if (icon) icon.className = 'fa-solid fa-bars';
+    });
+  });
 }
 
 /* ==========================================================================
@@ -1070,11 +1083,15 @@ function initResumeCanvas() {
     }
   };
 
-  window.addEventListener('resize', () => {
+  const handleModalResize = () => {
     const modal = document.getElementById('resumeModal');
     if (modal && modal.classList.contains('active')) {
       resize();
     }
+  };
+  window.addEventListener('resize', handleModalResize);
+  window.addEventListener('orientationchange', () => {
+    setTimeout(handleModalResize, 150);
   });
 }
 

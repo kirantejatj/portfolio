@@ -23,8 +23,8 @@
   --text-gold-muted: #bda280; /* Muted gold for descriptions */
   --text-dark: #475569;
   
-  --font-sans: 'Outfit', sans-serif;
-  --font-mono: 'Fira Code', monospace;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'Fira Code', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
   
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -32,11 +32,22 @@
 }
 
 /* Reset & Base Styles */
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -44,7 +55,13 @@ body {
   color: var(--text-main);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Custom Gold Scrollbar */
@@ -138,8 +155,10 @@ header {
   z-index: 100;
   background: rgba(6, 5, 5, 0.7);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   transition: var(--transition-fast);
+  padding-top: env(safe-area-inset-top);
 }
 
 header.scrolled {
@@ -149,9 +168,9 @@ header.scrolled {
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: min(1360px, 94vw);
   margin: 0 auto;
-  padding: 1.25rem 2rem;
+  padding: 1.15rem 1.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -229,31 +248,33 @@ nav a:hover::after, nav a.active::after {
 
 /* Sections General */
 section {
-  padding: 7.5rem 2rem 6.5rem 2rem;
-  max-width: 1200px;
+  padding: clamp(4.5rem, 8vw, 7.5rem) clamp(1.25rem, 4vw, 2.5rem);
+  max-width: min(1360px, 94vw);
   margin: 0 auto;
+  width: 100%;
 }
 
 .section-header {
-  margin-bottom: 4.5rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
   position: relative;
 }
 
 .section-tag {
   font-family: var(--font-mono);
   color: var(--primary);
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.4vw, 0.85rem);
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: clamp(1.5px, 0.5vw, 3px);
   display: block;
   margin-bottom: 0.5rem;
   text-shadow: 0 0 8px var(--primary-trans);
 }
 
 .section-title {
-  font-size: 2.65rem;
+  font-size: clamp(1.95rem, 4.5vw, 2.75rem);
   font-weight: 800;
   letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 .section-title span {
@@ -266,10 +287,11 @@ section {
 /* Hero Section with Profile Container */
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 8.5rem;
+  padding-top: max(7.5rem, calc(5rem + env(safe-area-inset-top)));
   position: relative;
 }
 
@@ -347,11 +369,12 @@ section {
 }
 
 .hero-content h1 {
-  font-size: 4.5rem;
+  font-size: clamp(2.35rem, 6.5vw, 4.5rem);
   font-weight: 850;
-  line-height: 1.1;
+  line-height: 1.12;
   margin-bottom: 1.5rem;
   letter-spacing: -1.5px;
+  word-break: break-word;
 }
 
 .hero-content h1 span.highlight {
@@ -426,6 +449,7 @@ section {
   color: var(--text-main);
   border: 1px solid var(--border-color);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .btn-secondary:hover {
@@ -454,6 +478,7 @@ section {
   text-decoration: none;
   transition: var(--transition-fast);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .social-icon:hover {
@@ -478,6 +503,7 @@ section {
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   transition: border-color var(--transition-normal);
 }
 
@@ -609,6 +635,7 @@ section {
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 10px 45px rgba(0, 0, 0, 0.6),
               0 0 15px rgba(255, 215, 0, 0.08),
               0 0 0 1px rgba(255, 255, 255, 0.03) inset;
@@ -816,6 +843,7 @@ section {
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1353,8 +1381,10 @@ footer {
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
+  height: 100dvh !important;
   background: rgba(4, 3, 3, 0.92) !important;
   backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
   z-index: 99999 !important;
   display: none !important;
   align-items: center !important;
@@ -1717,58 +1747,134 @@ footer {
   line-height: 1.55;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 4rem;
+/* ==========================================================================
+   Comprehensive Multi-Device & Cross-Platform Responsive Architecture
+   (4K Ultrawide, MacBook Retina, iPads, Tablets, iPhones, Android Phones)
+   ========================================================================== */
+
+/* 1. Ultrawide Monitors & 4K Displays (>= 1600px) */
+@media (min-width: 1600px) {
+  .nav-container, section {
+    max-width: 1520px;
+  }
+  .hero-content h1 {
+    font-size: 5.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.45rem;
+    max-width: 700px;
   }
   .terminal-widget {
-    height: 380px;
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
+    height: 470px;
+    font-size: 0.95rem;
   }
-  .skills-container {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
+  .resume-modal-container {
+    max-width: 1140px;
   }
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   }
 }
 
+/* 2. Laptops & Compact Desktops (1025px - 1280px, MacBook Air/Pro 13") */
+@media (max-width: 1280px) {
+  .nav-container, section {
+    max-width: 95vw;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.75rem;
+  }
+  .hero-content h1 {
+    font-size: 3.8rem;
+  }
+  .skills-container, .about-grid {
+    gap: 3rem;
+  }
+}
+
+/* 3. Tablets Landscape & iPad Pro (769px - 1024px) */
+@media (max-width: 1024px) {
+  section {
+    padding: 6rem 1.75rem 5rem 1.75rem;
+  }
+  .hero {
+    padding-top: 7rem;
+    min-height: auto;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .hero-profile-area {
+    align-items: flex-start;
+  }
+  .terminal-widget {
+    height: 380px;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .resume-modal-container {
+    max-width: 94vw;
+    max-height: 90vh;
+  }
+}
+
+/* 4. Tablets Portrait & Mobile Devices (<= 768px) */
 @media (max-width: 768px) {
   section {
-    padding: 5rem 1.5rem 4.5rem 1.5rem;
+    padding: 4.5rem 1.25rem 3.5rem 1.25rem;
   }
-  
-  .hero-content h1 {
-    font-size: 3rem;
+
+  .nav-container {
+    padding: 1rem 1.25rem;
   }
-  
+
   .mobile-nav-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     background: rgba(255, 215, 0, 0.08);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     color: var(--secondary);
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     cursor: pointer;
     transition: var(--transition-fast);
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .mobile-nav-toggle:hover {
+  .mobile-nav-toggle:hover, .mobile-nav-toggle:active {
     background: rgba(255, 215, 0, 0.2);
     border-color: var(--secondary);
-    box-shadow: 0 0 10px var(--secondary-glow);
+    box-shadow: 0 0 12px var(--secondary-glow);
   }
-  
+
   nav ul {
     display: none;
   }
@@ -1781,39 +1887,344 @@ footer {
     left: 0;
     width: 100%;
     background: rgba(10, 8, 7, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border-bottom: 1px solid var(--border-color);
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 1.5rem;
     gap: 1.25rem;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
     z-index: 100;
   }
-  
-  .contact-container {
+
+  nav ul.open li a {
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .hero {
+    padding-top: 6rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.35rem, 8vw, 3.4rem);
+    letter-spacing: -0.5px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .terminal-widget {
+    height: 350px;
+    font-size: 0.8rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
+  }
+
+  .stat-circle-box {
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-num {
+    font-size: 2.1rem;
+  }
+
+  .projects-grid {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 1.75rem;
   }
-  
-  .contact-form-panel {
-    padding: 2.25rem;
+
+  .project-card .project-body {
+    padding: 1.75rem 1.5rem;
   }
-  
+
   .timeline::before {
-    left: 17px;
+    left: 15px;
   }
-  
+
   .timeline-item {
-    padding-left: 48px;
+    padding-left: 42px;
   }
-  
+
   .timeline-icon {
-    left: 1px;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
   }
-  
+
+  .timeline-card {
+    padding: 1.65rem 1.35rem;
+  }
+
+  .contact-form-panel {
+    padding: 1.75rem 1.35rem;
+  }
+
+  .form-group input, .form-group textarea {
+    font-size: 16px !important; /* Critical for iOS Safari: prevents auto zoom */
+  }
+
   .footer-container {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
     text-align: center;
+    padding: 2rem 1.25rem;
+  }
+
+  /* Resume Preview Modal on Tablet & Mobile */
+  .resume-modal-backdrop {
+    padding: max(0.5rem, env(safe-area-inset-top)) max(0.5rem, env(safe-area-inset-right)) max(0.5rem, env(safe-area-inset-bottom)) max(0.5rem, env(safe-area-inset-left)) !important;
+  }
+
+  .resume-modal-container {
+    width: 100% !important;
+    max-height: 94dvh !important;
+    border-radius: 12px !important;
+  }
+
+  .resume-modal-header {
+    padding: 1rem 1.25rem !important;
+    gap: 0.75rem !important;
+  }
+
+  .modal-title-area h3 {
+    font-size: 1rem;
+  }
+
+  .modal-title-area span {
+    font-size: 0.75rem;
+  }
+
+  .resume-modal-actions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .btn-modal-action {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.78rem;
+  }
+
+  .resume-modal-body {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .resume-paper-view {
+    padding: 1.65rem 1.25rem !important;
+  }
+
+  .paper-skill-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .paper-job-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+/* 5. Compact Smartphones (iPhone 12/13/14/15/16, Android <= 480px) */
+@media (max-width: 480px) {
+  section {
+    padding: 3.5rem 1rem 2.5rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .hero-profile-area {
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-container {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 0.75rem auto;
+  }
+
+  .profile-img-frame {
+    width: 105px;
+    height: 105px;
+  }
+
+  .ring-1 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .ring-2 {
+    width: 138px;
+    height: 138px;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .stat-circle-box {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .stat-num {
+    font-size: 1.85rem;
+  }
+
+  .stat-title {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+  }
+
+  .terminal-widget {
+    height: 310px;
+    font-size: 0.75rem;
+  }
+
+  .terminal-header {
+    padding: 0.5rem 0.85rem;
+  }
+
+  .terminal-body {
+    padding: 0.85rem;
+  }
+
+  .skills-left h3 {
+    font-size: 1.45rem;
+  }
+
+  .skill-cat-btn {
+    padding: 1rem 1.15rem;
+    font-size: 0.9rem;
+  }
+
+  .project-card .project-body {
+    padding: 1.35rem 1rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .contact-form-panel {
+    padding: 1.35rem 1rem;
+  }
+
+  /* Resume modal on narrow phones */
+  .resume-modal-actions {
+    flex-wrap: wrap;
+  }
+
+  .btn-modal-action {
+    flex: 1 1 calc(50% - 0.5rem);
+    padding: 0.45rem 0.5rem;
+    font-size: 0.72rem;
+    justify-content: center;
+  }
+
+  .modal-close-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .resume-modal-header {
+    padding: 0.85rem 1rem 0.85rem 1rem !important;
+    position: relative !important;
+  }
+
+  .resume-paper-view {
+    padding: 1.15rem 0.85rem !important;
+  }
+
+  .resume-paper-header h1 {
+    font-size: 1.45rem;
+  }
+
+  .resume-paper-header h2 {
+    font-size: 0.85rem;
+  }
+
+  .resume-paper-contact span {
+    font-size: 0.72rem;
+  }
+
+  .paper-job-item, .paper-proj-item {
+    padding: 0.85rem;
+  }
+}
+
+/* 6. Ultra-Compact Phones (<= 360px, iPhone SE 1st gen, Galaxy Fold outer screen) */
+@media (max-width: 360px) {
+  .hero-content h1 {
+    font-size: 1.95rem;
+  }
+  .nav-container {
+    padding: 0.85rem 1rem;
+  }
+  .logo {
+    font-size: 1.25rem;
+  }
+  .btn-modal-action span {
+    font-size: 0.68rem;
+  }
+  .stat-num {
+    font-size: 1.6rem;
+  }
+}
+
+/* 7. Apple Retina & High-DPI Displays (MacBook, iMac 5K, 4K Screens) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .profile-img-frame {
+    border-width: 2.5px;
+  }
+}
+
+/* 8. Touch Screen Optimizations (No Sticky Hover) */
+@media (hover: none) and (pointer: coarse) {
+  .social-icon, .btn, .skill-cat-btn, .mobile-nav-toggle, .btn-modal-action, .modal-close-btn {
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
   }
 }
