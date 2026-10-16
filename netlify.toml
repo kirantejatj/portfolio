@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/Kotagiri_Kiran_Teja_Resume.docx"
+  [headers.values]
+    Content-Disposition = "attachment; filename=\"Kotagiri_Kiran_Teja_Resume.docx\""
+    Content-Type = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+[[headers]]
+  for = "/Kotagiri_Kiran_Teja_Resume.pdf"
+  [headers.values]
+    Content-Type = "application/pdf"

@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiran Teja | Database Administrator &amp; Full-Stack Platform Architect</title>
+  <meta name="description" content="Portfolio of Kotagiri Kiran Teja — Database Administrator, Enterprise Platform Architect, and Developer with 4+ years of expertise across Oracle EBS, SQL Server AlwaysOn, PostgreSQL, and mission-critical government web systems (FastAPI &amp; React 19).">
+  
+  <!-- FontAwesome Icons for modern aesthetic -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Dynamic Canvas Connection network background -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-overlay"></div>
+  <div class="glow-orb" id="orb-1"></div>
+  <div class="glow-orb" id="orb-2"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span>KTeja</span>DB<span class="cursor-blink"></span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about" class="active">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="javascript:void(0)" id="navResumeBtn" class="nav-resume-btn"><i class="fa-solid fa-file-lines"></i> Resume</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-nav-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-grid">
+      <!-- Profile Area & Hero Content combined -->
+      <div class="hero-profile-area">
+        <!-- Interactive orbiting profile photo frame -->
+        <div class="profile-container">
+          <div class="orbit-ring ring-1"></div>
+          <div class="orbit-ring ring-2"></div>
+          <div class="profile-img-frame">
+            <img src="kiran_profile.jpg" alt="Kotagiri Kiran Teja">
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <span class="section-tag">&lt; DATABASE ARCHITECT &amp; PLATFORM ENGINEER &gt;</span>
+          <h1>Hi, I'm <br><span class="highlight">Kiran Teja</span></h1>
+          <p class="hero-subtitle">
+            Enterprise Database Administrator &amp; Full-Stack Platform Architect. Engineering high-availability clusters (AlwaysOn, Oracle RAC), PostgreSQL architectures, and production government web platforms (FastAPI &amp; React 19).
+          </p>
+          <div class="hero-buttons">
+            <button type="button" id="openResumeHeroBtn" class="btn btn-primary"><i class="fa-solid fa-eye"></i> View Resume</button>
+            <a href="Kotagiri_Kiran_Teja_Resume.docx" download="Kotagiri_Kiran_Teja_Resume.docx" class="btn btn-secondary" title="Download Word (.docx)"><i class="fa-solid fa-file-word"></i> Word (.docx)</a>
+            <a href="Kotagiri_Kiran_Teja_Resume.pdf" download="Kotagiri_Kiran_Teja_Resume.pdf" class="btn btn-secondary" title="Download PDF"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+          </div>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/kiran-teja-26ba3b258" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:kotagirikiranteja@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="tel:+917337229232" class="social-icon" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive CLI Terminal Widget -->
+      <div class="terminal-widget">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-btn t-close"></span>
+            <span class="terminal-btn t-minimize"></span>
+            <span class="terminal-btn t-maximize"></span>
+          </div>
+          <div class="terminal-title">kteja_db_terminal.sh</div>
+          <div><i class="fa-solid fa-terminal" style="color: var(--primary);"></i></div>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-line terminal-welcome">
+Welcome to <span class="hl">KTeja Architecture Console</span> v3.0.0 (Ubuntu/WSL2).
+Connected to production database nodes [Oracle RAC + SQL AlwaysOn + PostgreSQL 18].
+Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '<span class="hl">projects</span>', or '<span class="hl">help</span>'.
+          </div>
+          
+          <!-- Current Input Row -->
+          <div class="terminal-line terminal-input-line">
+            <span class="terminal-prompt">KTejaDB&gt;</span>
+            <div class="terminal-input-wrapper">
+              <input type="text" id="terminal-input" class="terminal-input-element" autofocus autocomplete="off" spellcheck="false">
+              <span class="terminal-cursor" id="terminal-cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Performance Metrics (Wow factor) -->
+    <div class="live-metrics-section">
+      <div class="metrics-grid">
+        <!-- DB Engine Status -->
+        <div class="metric-card active">
+          <div class="metric-label">
+            <span>Server Instance</span>
+            <span class="metric-status-dot"></span>
+          </div>
+          <div class="metric-value">Active</div>
+          <div class="metric-desc">Oracle RAC &amp; SQL AlwaysOn Up</div>
+          <div class="metric-graph-mini">
+            <div class="metric-bar" style="height: 40%;"></div>
+            <div class="metric-bar" style="height: 60%;"></div>
+            <div class="metric-bar" style="height: 50%;"></div>
+            <div class="metric-bar" style="height: 80%;"></div>
+            <div class="metric-bar" style="height: 90%;"></div>
+            <div class="metric-bar" style="height: 70%;"></div>
+          </div>
+        </div>
+
+        <!-- Connection Load -->
+        <div class="metric-card active">
+          <div class="metric-label">
+            <span>Sessions Count</span>
+            <span class="metric-status-dot"></span>
+          </div>
+          <div class="metric-value"><span id="metric-connections">142</span> <span class="unit">active</span></div>
+          <div class="metric-desc">Dynamic worker processes</div>
+          <div class="metric-graph-mini">
+            <div class="metric-bar" style="height: 30%;"></div>
+            <div class="metric-bar" style="height: 45%;"></div>
+            <div class="metric-bar" style="height: 55%;"></div>
+            <div class="metric-bar" style="height: 35%;"></div>
+            <div class="metric-bar" style="height: 50%;"></div>
+            <div class="metric-bar" style="height: 65%;"></div>
+          </div>
+        </div>
+
+        <!-- Execution Delay -->
+        <div class="metric-card active">
+          <div class="metric-label">
+            <span>Query Speed</span>
+            <span class="metric-status-dot"></span>
+          </div>
+          <div class="metric-value"><span id="metric-speed">0.034</span> <span class="unit">sec</span></div>
+          <div class="metric-desc">Mean transaction latency</div>
+          <div class="metric-graph-mini">
+            <div class="metric-bar" style="height: 60%;"></div>
+            <div class="metric-bar" style="height: 50%;"></div>
+            <div class="metric-bar" style="height: 30%;"></div>
+            <div class="metric-bar" style="height: 20%;"></div>
+            <div class="metric-bar" style="height: 25%;"></div>
+            <div class="metric-bar" style="height: 15%;"></div>
+          </div>
+        </div>
+
+        <!-- Buffer Pool Hit Ratio -->
+        <div class="metric-card active">
+          <div class="metric-label">
+            <span>Cache Hit Ratio</span>
+            <span class="metric-status-dot"></span>
+          </div>
+          <div class="metric-value"><span id="metric-buffer">99.96</span><span class="unit">%</span></div>
+          <div class="metric-desc">Optimized index scan operations</div>
+          <div class="metric-graph-mini">
+            <div class="metric-bar" style="height: 95%;"></div>
+            <div class="metric-bar" style="height: 97%;"></div>
+            <div class="metric-bar" style="height: 96%;"></div>
+            <div class="metric-bar" style="height: 99%;"></div>
+            <div class="metric-bar" style="height: 98%;"></div>
+            <div class="metric-bar" style="height: 99%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about reveal" id="about">
+    <div class="section-header">
+      <span class="section-tag">&lt; PROFILE_SUMMARY &gt;</span>
+      <h2 class="section-title">Database Architect &amp; <span>Platform Engineer</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="about-highlight">
+          Results-driven Enterprise Database Administrator &amp; Full-Stack Platform Architect with 4+ years of experience engineering high-availability database infrastructures and mission-critical government web systems.
+        </p>
+        <p>
+          Specialized in bridging deep database internals with full-scale production software delivery. I manage production SQL Server (AlwaysOn Availability Groups, replication, failover clusters) and Oracle EBS environments (cloning, OEM 13.5, RMAN backup &amp; disaster recovery), tuning transaction bottlenecks through execution plans and DMV diagnostics.
+        </p>
+        <p>
+          Beyond traditional DBA operations, I have single-handedly designed, developed, and deployed full-scale production platforms for government entities including **APCRDA** and **AGIC**—notably the **Enterprise RFQ e-Procurement Portal v2.0** and the **Amaravati Land CRM &amp; Executive Dashboard (ED-Tracker)**. My engineering spans 70-column relational schemas in PostgreSQL 16/18, asynchronous FastAPI REST APIs with granular RBAC, dynamic Excel bulk parsing engines, React 19 dashboards, and 15+ official technical documentation volumes.
+        </p>
+      </div>
+
+      <!-- SLA / Experience Numeric stats -->
+      <div class="stats-circle-container">
+        <div class="stat-circle-box">
+          <div class="stat-num"><span class="stat-num-value" data-target="4.2" data-float="true">4.2</span><span>+</span></div>
+          <div class="stat-title">Years Exp</div>
+        </div>
+        <div class="stat-circle-box">
+          <div class="stat-num"><span class="stat-num-value" data-target="99.99" data-float="true">99.99</span><span>%</span></div>
+          <div class="stat-title">SLA Uptime</div>
+        </div>
+        <div class="stat-circle-box">
+          <div class="stat-num"><span class="stat-num-value" data-target="2" data-float="false">2</span><span></span></div>
+          <div class="stat-title">Flagship Platforms</div>
+        </div>
+        <div class="stat-circle-box">
+          <div class="stat-num"><span class="stat-num-value" data-target="15" data-float="false">15</span><span>+</span></div>
+          <div class="stat-title">Docs Volumes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills reveal" id="skills">
+    <div class="section-header">
+      <span class="section-tag">&lt; CORE_SKILLS &gt;</span>
+      <h2 class="section-title">Technical <span>Competencies</span></h2>
+    </div>
+    <div class="skills-container">
+      <div class="skills-left">
+        <h3>Technical Ecosystem</h3>
+        <div class="skills-categories">
+          <button class="skill-cat-btn active" data-category="architecture">
+            <span>Enterprise Architecture &amp; Full-Stack</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button class="skill-cat-btn" data-category="sqlserver">
+            <span>SQL Server Administration &amp; Dev</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button class="skill-cat-btn" data-category="oracle">
+            <span>Oracle EBS &amp; Database Admin</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button class="skill-cat-btn" data-category="automation">
+            <span>Automation, ETL &amp; Analytics</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="skills-display-panel">
+        <!-- Architecture & Full-Stack Skills -->
+        <div class="skills-list active" id="skills-architecture">
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">PostgreSQL 16/18 Relational Design &amp; Optimization</span>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="95%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">FastAPI (Python 3.14) REST API &amp; Microservices</span>
+              <span class="skill-pct">94%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="94%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">React 19 &amp; Vite Interactive Component Engineering</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">JWT Authentication, RBAC &amp; Tenant Isolation</span>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="95%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">Dynamic Data Engines (Excel 69-Col Parsers &amp; ZIP Streams)</span>
+              <span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="92%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SQL Server Skills -->
+        <div class="skills-list" id="skills-sqlserver">
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">High Availability (AlwaysOn, Replication, Mirroring)</span>
+              <span class="skill-pct">94%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="94%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">Backup &amp; Recovery Strategies (Zero Data Loss)</span>
+              <span class="skill-pct">96%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="96%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">Performance Tuning (Execution Plans, Indexing, DMVs)</span>
+              <span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="92%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">T-SQL Stored Procedures, Functions &amp; Triggers</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="90%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Oracle Skills -->
+        <div class="skills-list" id="skills-oracle">
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">Oracle EBS Support (Cloning, Patching, Upgrades)</span>
+              <span class="skill-pct">86%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="86%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">Oracle Enterprise Manager (OEM 13.5) Monitoring</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">RMAN Backup &amp; Disaster Recovery Operations</span>
+              <span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="92%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">User, Role &amp; Privilege Security Policy Management</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="88%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Automation & Analytics -->
+        <div class="skills-list" id="skills-automation">
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">Power BI Dashboard Setup (DAX Modeling &amp; Reports)</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">SSIS ETL Package Design, Warehousing &amp; Maintenance</span>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">PowerShell &amp; Linux Bash Database Automation</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name-row">
+              <span class="skill-title-text">Docker Containerization, Nginx &amp; Windows NSSM</span>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-width="85%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience reveal" id="experience">
+    <div class="section-header">
+      <span class="section-tag">&lt; TIMELINE &gt;</span>
+      <h2 class="section-title">Career <span>Journey</span></h2>
+    </div>
+    <div class="timeline">
+      <!-- Entro Labs / APCRDA & AGIC -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa-solid fa-server"></i></div>
+        <div class="timeline-date">2025 - Present</div>
+        <div class="timeline-content">
+          <h3>Lead Database Administrator &amp; Systems Architect</h3>
+          <div class="timeline-company">Entro Labs / APCRDA &amp; AGIC (Government of Andhra Pradesh)</div>
+          <ul class="timeline-details">
+            <li><strong>Single-Handedly Architected &amp; Built Flagship Production Platforms:</strong> Designed, developed, and deployed the <em>AGIC RFQ e-Procurement Portal v2.0</em> and the <em>Amaravati Land CRM &amp; Executive Dashboard (ED-Tracker)</em> from ground zero through production.</li>
+            <li><strong>Enterprise Relational Modeling (PostgreSQL 16/18):</strong> Architected high-throughput schemas including <code>RFQ_DB</code> (tenders, line-item partitioning, multi-annexure submissions, audit trails) and <code>crm.crm</code> (70-column master land parcel schema with automated sequences and foreign key dependencies).</li>
+            <li><strong>High-Performance FastAPI REST Backends:</strong> Developed 30+ asynchronous REST API endpoints with Pydantic v2 validation, JWT authentication, granular RBAC (<code>require_read/write_permission</code>), officer data isolation filters, and in-memory streaming ZIP archive generation (<code>io.BytesIO</code>).</li>
+            <li><strong>Two-Way Excel Engine &amp; Analytics Dashboards:</strong> Engineered automated Excel template generators and 69-column bulk upload validation parsers with modal error-trapping, coupled with React 19 interactive Chart.js KPI builders and slide-out drawer views.</li>
+            <li><strong>Production Database Administration &amp; High Availability:</strong> Maintained production SQL Server (2012–2019) AlwaysOn Availability Groups, failover clusters, log shipping, and automated PowerShell backup/diagnostic pipelines ensuring 99.99% uptime.</li>
+            <li><strong>Authored 15 Official Engineering Documentation Volumes:</strong> Authored exhaustive 8-volume (RFQ Portal) and 7-volume (ED-Tracker) technical manual suites spanning architecture diagrams, database dictionaries, REST API specs, and disaster recovery runbooks.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Techbulls -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa-solid fa-database"></i></div>
+        <div class="timeline-date">2022 - 2025</div>
+        <div class="timeline-content">
+          <h3>Oracle Apps DBA &amp; BI Developer</h3>
+          <div class="timeline-company">Techbulls Software Services Pvt. Ltd.</div>
+          <ul class="timeline-details">
+            <li><strong>Oracle EBS Lifecycle Management:</strong> Administered Oracle EBS 12.2 environments: performed database cloning, patching, concurrent manager tuning, tablespace reorgs, and multi-tier application support.</li>
+            <li><strong>OEM 13.5 Enterprise Monitoring:</strong> Deployed Oracle Enterprise Manager dashboards for proactive CPU/memory capacity tracking, deadlock detection, and slow query profiling.</li>
+            <li><strong>Disaster Recovery &amp; Backup Operations:</strong> Implemented comprehensive zero-data-loss RMAN backup strategies, catalog administration, and point-in-time recovery validations.</li>
+            <li><strong>BI Dashboards &amp; ETL:</strong> Built interactive financial analytics reports in Power BI with complex DAX measures and automated SSIS ETL data extraction pipelines.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects reveal" id="projects">
+    <div class="section-header">
+      <span class="section-tag">&lt; RECENT_WORKS &gt;</span>
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+    </div>
+    <div class="projects-grid">
+      <!-- AGIC RFQ Portal v2.0 (Flagship System 1) -->
+      <div class="project-card">
+        <div class="project-body">
+          <div>
+            <div class="project-badge gold"><i class="fa-solid fa-star"></i> Flagship Production Platform</div>
+            <div class="project-icon"><i class="fa-solid fa-file-contract"></i></div>
+            <h3 class="project-title">AGIC Enterprise RFQ Portal v2.0</h3>
+            <p class="project-desc">
+              Single-handedly architected and engineered a comprehensive e-Procurement and RFQ quotation management platform for Amaravati Growth &amp; Infrastructure Corporation Limited (AGIC). Modernized state procurement workflows with dynamic market-driven pricing, complete EMD elimination, and multi-officer isolation.
+            </p>
+            <ul class="project-highlights">
+              <li>Dual React 19 portals: Chief Engineer Review Center &amp; 6-Step Vendor Bidding Wizard (L&amp;T, Tata, Navayuga, MEIL).</li>
+              <li>PostgreSQL 16 relational design (<code>RFQ_DB</code>) with line-item partitioning, Annexure I/II/III capture, and immutable audit logs.</li>
+              <li>FastAPI asynchronous backend with JWT RBAC, dynamic on-the-fly streaming ZIP document archive generator (<code>io.BytesIO</code>), and Non-SoR committee governance.</li>
+            </ul>
+            <div class="project-docs-badge">
+              <i class="fa-solid fa-book-bookmark"></i> Authored 8-Volume Official Technical &amp; Disaster Recovery Suite
+            </div>
+          </div>
+          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+            <span class="project-tag">PostgreSQL 16</span>
+            <span class="project-tag">FastAPI</span>
+            <span class="project-tag">Python 3.14</span>
+            <span class="project-tag">React 19</span>
+            <span class="project-tag">SQLAlchemy 2.0</span>
+            <span class="project-tag">Tailwind CSS</span>
+            <span class="project-tag">JWT RBAC</span>
+            <span class="project-tag">Streaming ZIP</span>
+            <span class="project-tag">Docker / Nginx</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amaravati Land CRM & Executive Dashboard (Flagship System 2) -->
+      <div class="project-card">
+        <div class="project-body">
+          <div>
+            <div class="project-badge gold"><i class="fa-solid fa-chart-pie"></i> Executive Government CRM</div>
+            <div class="project-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3 class="project-title">Amaravati Land CRM (ED-Tracker)</h3>
+            <p class="project-desc">
+              Designed and built from scratch an enterprise land allotment tracking and CRM platform for Government of Andhra Pradesh executive leadership. Tracks 117+ prime land parcels across Amaravati with real-time analytics, capital outlay monitoring, and milestone stage progression.
+            </p>
+            <ul class="project-highlights">
+              <li>Engineered 70-column PostgreSQL 18 relational schema (<code>crm.crm</code>) with sequence tracking, foreign keys, and complete mutation audit trails.</li>
+              <li>Engineered two-way Excel parser: automated master template generator &amp; 69-column bulk upload validator with custom error-trapping modal.</li>
+              <li>FastAPI backend (19 REST endpoints) with <code>psycopg 3</code>, JWT authentication, granular RBAC (<code>read/write permissions</code>), and Chart.js dynamic KPI graph builder.</li>
+            </ul>
+            <div class="project-docs-badge">
+              <i class="fa-solid fa-book-bookmark"></i> Authored 7-Volume Official Technical &amp; Operations Manual Suite
+            </div>
+          </div>
+          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+            <span class="project-tag">PostgreSQL 18</span>
+            <span class="project-tag">FastAPI</span>
+            <span class="project-tag">psycopg 3</span>
+            <span class="project-tag">React 19</span>
+            <span class="project-tag">Chart.js</span>
+            <span class="project-tag">Excel Engine</span>
+            <span class="project-tag">JWT RBAC</span>
+            <span class="project-tag">Windows NSSM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AP Nirman -->
+      <div class="project-card">
+        <div class="project-body">
+          <div>
+            <div class="project-badge"><i class="fa-solid fa-landmark"></i> State Infra System</div>
+            <div class="project-icon"><i class="fa-solid fa-landmark"></i></div>
+            <h3 class="project-title">AP Nirman Infrastructure Procurement</h3>
+            <p class="project-desc">
+              Engineered materials procurement workflows and financial settlement integrations with CFMS for the Government of Andhra Pradesh. Designed high-throughput PL/SQL stored procedures, packages, and database triggers under Oracle 11g for real-time ledger settlement and automated reporting.
+            </p>
+            <ul class="project-highlights">
+              <li>Optimized complex query execution plans, slashing financial report runtimes by 40%.</li>
+              <li>Integrated secure CFMS government treasury API endpoints for invoice verification.</li>
+              <li>Automated scheduled database health audits and transactional consistency verification.</li>
+            </ul>
+          </div>
+          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+            <span class="project-tag">Oracle 11g</span>
+            <span class="project-tag">PL/SQL</span>
+            <span class="project-tag">Linux Bash</span>
+            <span class="project-tag">CFMS API</span>
+            <span class="project-tag">Query Optimization</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLIL Financial Reports -->
+      <div class="project-card">
+        <div class="project-body">
+          <div>
+            <div class="project-badge"><i class="fa-solid fa-chart-line"></i> Corporate BI Intelligence</div>
+            <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3 class="project-title">BLIL Financial Analytics Suite</h3>
+            <p class="project-desc">
+              Constructed automated executive dashboards for financial analytics and enterprise KPIs. Built scalable tabular data models and end-to-end SSIS ETL pipelines consolidating multi-source accounting databases, reducing monthly financial reconciliation overhead.
+            </p>
+            <ul class="project-highlights">
+              <li>Formulated multi-tier DAX calculations for revenue variance, cash flows, and capital allocation.</li>
+              <li>Automated nocturnal SSIS ETL extraction, transformation, and incremental loading routines.</li>
+              <li>Enhanced data refresh efficiency and eliminated manual spreadsheet reconciliation errors.</li>
+            </ul>
+          </div>
+          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+            <span class="project-tag">Power BI</span>
+            <span class="project-tag">DAX Query</span>
+            <span class="project-tag">SSIS ETL</span>
+            <span class="project-tag">Data Warehousing</span>
+            <span class="project-tag">Financial Modeling</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DB HA & DR Automation -->
+      <div class="project-card">
+        <div class="project-body">
+          <div>
+            <div class="project-badge"><i class="fa-solid fa-shield-halved"></i> 24/7 Production Operations</div>
+            <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="project-title">High Availability &amp; DR Automation</h3>
+            <p class="project-desc">
+              Engineered proactive monitoring and automated disaster recovery failover architectures across SQL Server AlwaysOn Availability Groups and Oracle databases. Features automated DMV deadlock inspection, RMAN backup verification, and instant alerting.
+            </p>
+            <ul class="project-highlights">
+              <li>Zero-data-loss RMAN and T-SQL backup automation with automated integrity checksum checks.</li>
+              <li>Automated DMV scripts tracking active locks, buffer hit ratios, and index fragmentation.</li>
+              <li>Built PowerShell &amp; Bash automation broadcasting incident dispatches before SLA breaches.</li>
+            </ul>
+          </div>
+          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+            <span class="project-tag">SQL Server AlwaysOn</span>
+            <span class="project-tag">Oracle RMAN</span>
+            <span class="project-tag">PowerShell</span>
+            <span class="project-tag">Bash Scripts</span>
+            <span class="project-tag">OEM 13.5</span>
+            <span class="project-tag">DMV Tuning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact reveal" id="contact">
+    <div class="section-header">
+      <span class="section-tag">&lt; CONNECT &gt;</span>
+      <h2 class="section-title">Get in <span>Touch</span></h2>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <!-- Phone -->
+        <div class="contact-info-card">
+          <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-info-text">
+            <span class="contact-info-label">Call / WhatsApp</span>
+            <span class="contact-info-value">+91 7337229232</span>
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="contact-info-card">
+          <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-info-text">
+            <span class="contact-info-label">Email Directory</span>
+            <span class="contact-info-value">kotagirikiranteja@gmail.com</span>
+          </div>
+        </div>
+        <!-- LinkedIn -->
+        <div class="contact-info-card">
+          <div class="contact-info-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div class="contact-info-text">
+            <span class="contact-info-label">LinkedIn profile</span>
+            <span class="contact-info-value">linkedin.com/in/kiran-teja-26ba3b258</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message submission form -->
+      <div class="contact-form-panel">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="nameInput" class="form-input" placeholder=" " required autocomplete="name">
+            <label for="nameInput" class="form-label">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="emailInput" class="form-input" placeholder=" " required autocomplete="email">
+            <label for="emailInput" class="form-label">Email Address</label>
+          </div>
+          <div class="form-group">
+            <textarea id="messageInput" class="form-input" placeholder=" " required></textarea>
+            <label for="messageInput" class="form-label">Message Details</label>
+          </div>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-database"></i> COMMIT MESSAGE</button>
+          
+          <!-- Mock SQL Query Feedback -->
+          <div id="formFeedback" class="form-feedback"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        KTeja<span>DB</span>_
+      </div>
+      <div class="footer-text">
+        &copy; 2026 Kotagiri Kiran Teja. Designed with <span style="color:var(--primary);"><i class="fa-solid fa-heart"></i></span> for databases.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive In-Portfolio Resume Modal -->
+  <div id="resumeModal" class="resume-modal-backdrop">
+    <div class="resume-modal-container">
+      <!-- Kinetic Velas Energy Stream Simulation Canvas -->
+      <canvas id="resume-canvas"></canvas>
+
+      <!-- Modal Header -->
+      <div class="resume-modal-header">
+        <div class="modal-title-area">
+          <i class="fa-solid fa-file-lines"></i>
+          <div>
+            <h3>Kotagiri Kiran Teja — Executive Resume</h3>
+            <span>Database Administrator &amp; Full-Stack Platform Architect</span>
+          </div>
+        </div>
+        <div class="resume-modal-actions">
+          <a href="Kotagiri_Kiran_Teja_Resume.docx" download="Kotagiri_Kiran_Teja_Resume.docx" class="btn-modal-action docx" title="Download Word (.docx)">
+            <i class="fa-solid fa-file-word"></i> <span>Download Word (.docx)</span>
+          </a>
+          <a href="Kotagiri_Kiran_Teja_Resume.pdf" download="Kotagiri_Kiran_Teja_Resume.pdf" class="btn-modal-action pdf" title="Download PDF">
+            <i class="fa-solid fa-file-pdf"></i> <span>Download PDF</span>
+          </a>
+          <button type="button" id="closeResumeModalBtn" class="modal-close-btn" aria-label="Close Resume Preview">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body / Document Preview -->
+      <div class="resume-modal-body">
+        <div class="resume-paper-view">
+          <!-- Paper Header -->
+          <div class="resume-paper-header">
+            <h1>KOTAGIRI KIRAN TEJA</h1>
+            <h2>Database Administrator &amp; Full-Stack Platform Architect</h2>
+            <div class="resume-paper-contact">
+              <span><strong>Email:</strong> kotagirikiranteja@gmail.com</span>
+              <span><strong>Mobile:</strong> +91 7337229232</span>
+              <span><strong>LinkedIn:</strong> linkedin.com/in/kiran-teja-26ba3b258</span>
+              <span><strong>Location:</strong> Andhra Pradesh, India</span>
+            </div>
+          </div>
+
+          <!-- Section: Executive Summary -->
+          <div class="resume-paper-section">
+            <h3 class="paper-section-title">EXECUTIVE PROFESSIONAL SUMMARY</h3>
+            <p>
+              Results-driven Enterprise Database Administrator and Full-Stack Platform Architect with 4+ years of hands-on expertise engineering high-availability database infrastructures (Oracle EBS, SQL Server AlwaysOn, PostgreSQL 16/18) and building mission-critical government software platforms from the ground up (FastAPI, Python 3.14, React 19). Single-handedly architected, developed, and deployed two flagship production systems for Government of Andhra Pradesh entities (APCRDA / AGIC)—the Enterprise RFQ e-Procurement Portal v2.0 and the Amaravati Land CRM &amp; Executive Dashboard (ED-Tracker). Distinguished author of 15 official technical and operational documentation manuals spanning system architectures, database schemas, REST API specifications, and disaster recovery runbooks. Proven track record maintaining 99.99% enterprise database SLA uptime, tuning complex query bottlenecks, executing zero-data-loss backup/recovery strategies, and automating enterprise workflows.
+            </p>
+          </div>
+
+          <!-- Section: Core Technical Competencies -->
+          <div class="resume-paper-section">
+            <h3 class="paper-section-title">TECHNICAL COMPETENCIES &amp; ECOSYSTEM</h3>
+            <div class="paper-skills-grid">
+              <div class="paper-skill-row">
+                <span class="skill-cat-label">Full-Stack &amp; Systems Architecture:</span>
+                <span>PostgreSQL 16/18, FastAPI (Python 3.14), React 19, Vite, SQLAlchemy 2.0, Pydantic v2, RESTful Microservices, JWT Bearer Auth, Granular RBAC, Multi-Tenant Isolation, Dynamic In-Memory Streaming ZIP Generation (io.BytesIO), Two-Way Excel Batch Parsing &amp; Validation Engines</span>
+              </div>
+              <div class="paper-skill-row">
+                <span class="skill-cat-label">SQL Server Administration &amp; Dev:</span>
+                <span>SQL Server (2012–2019), High Availability (AlwaysOn Availability Groups, Failover Clustering, Database Mirroring, Transactional Replication, Log Shipping), T-SQL Stored Procedures, Triggers, Query Execution Plan Analysis, Index Optimization, Dynamic Management Views (DMVs), Deadlock &amp; I/O Resolution</span>
+              </div>
+              <div class="paper-skill-row">
+                <span class="skill-cat-label">Oracle Database &amp; EBS Admin:</span>
+                <span>Oracle Database 11g, 12c, 19c, Oracle E-Business Suite (EBS 12.2) Administration, Rapid Cloning, Patching, Upgrades, Concurrent Manager Tuning, Oracle Enterprise Manager (OEM 13.5), RMAN Backup &amp; Point-in-Time Recovery, Tablespace Management, Oracle RAC &amp; Data Guard (Exposure)</span>
+              </div>
+              <div class="paper-skill-row">
+                <span class="skill-cat-label">Data Engineering &amp; BI:</span>
+                <span>Power BI (Tabular Modeling, Advanced DAX, Executive Dashboards), SSIS ETL Package Design, Data Warehousing, Chart.js Dynamic Visualizations, Automated Financial Ledger Reconciliation</span>
+              </div>
+              <div class="paper-skill-row">
+                <span class="skill-cat-label">DevOps, Infrastructure &amp; OS:</span>
+                <span>Linux Administration (Ubuntu, RHEL), Windows Server 2022, PowerShell Automation Scripting, Linux Shell (Bash), Docker Containerization, Nginx Reverse Proxy, Windows NSSM Daemonization, Disaster Recovery Orchestration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Experience -->
+          <div class="resume-paper-section">
+            <h3 class="paper-section-title">PROFESSIONAL WORK EXPERIENCE</h3>
+            
+            <div class="paper-job-item">
+              <div class="paper-job-header">
+                <div>
+                  <strong>Lead Database Administrator &amp; Systems Architect</strong>
+                  <span class="job-company"> | Entro Labs / APCRDA &amp; AGIC (Government of Andhra Pradesh)</span>
+                </div>
+                <div class="job-period">2025 – Present | Amaravati, AP</div>
+              </div>
+              <ul class="paper-bullets">
+                <li><strong>Single-Handedly Architected &amp; Delivered Production Government Platforms:</strong> Designed, programmed, tested, and deployed from scratch two flagship enterprise platforms: the <em>AGIC RFQ e-Procurement Portal v2.0</em> and the <em>Amaravati Land CRM &amp; Executive Dashboard (ED-Tracker)</em>.</li>
+                <li><strong>Enterprise Relational Database Modeling (PostgreSQL 16/18):</strong> Engineered high-throughput schemas with ACID compliance, including <em>RFQ_DB</em> (tender partitions, 6-step vendor proposals, Annexures I/II/III, audit trails) and <em>crm.crm</em> (70-column master parcel tracking model with auto-increment sequences, foreign keys, and security triggers).</li>
+                <li><strong>Asynchronous Microservices Engine (FastAPI &amp; Python 3.14):</strong> Developed 30+ asynchronous REST API endpoints with Pydantic v2 data validation, SQLAlchemy 2.0 ORM, JWT token authentication, granular RBAC (<code>require_read/write_permission</code>), and multi-officer tenancy isolation.</li>
+                <li><strong>Dynamic In-Memory ZIP Streaming Engine:</strong> Architected high-speed on-the-fly document packaging using Python <code>zipfile</code> and in-memory <code>io.BytesIO</code> streaming buffers for bulk multi-file vendor dossier exports with zero temporary disk clutter.</li>
+                <li><strong>Two-Way Excel Batch Engine &amp; Modern Frontend (React 19 &amp; Vite):</strong> Built custom 69-column Excel master template generators and automated bulk upload parsers with modal error-trapping, coupled with responsive React 19 UIs and Chart.js dynamic KPI graph builders.</li>
+                <li><strong>Mission-Critical SQL Server (2012–2019) High Availability:</strong> Managed production AlwaysOn Availability Groups, failover clusters, and log shipping, maintaining a verified <strong>99.99% system SLA uptime</strong>.</li>
+                <li><strong>Authored 15 Official Engineering Documentation Volumes:</strong> Single-handedly authored complete 8-volume (RFQ Portal) and 7-volume (ED-Tracker) technical manual suites covering system architecture, ER dictionaries, REST API specs, and disaster recovery runbooks.</li>
+              </ul>
+            </div>
+
+            <div class="paper-job-item">
+              <div class="paper-job-header">
+                <div>
+                  <strong>Oracle Apps DBA &amp; Business Intelligence Developer</strong>
+                  <span class="job-company"> | Techbulls Software Services Pvt. Ltd.</span>
+                </div>
+                <div class="job-period">2022 – 2025 | Hyderabad, TS</div>
+              </div>
+              <ul class="paper-bullets">
+                <li><strong>Oracle EBS Lifecycle Administration:</strong> Provided comprehensive support for Oracle EBS (12.2) and Oracle Database (11g/12c/19c) environments, performing automated database cloning, concurrent manager tuning, patching, and multi-tier application support.</li>
+                <li><strong>Enterprise Monitoring (OEM 13.5):</strong> Configured Oracle Enterprise Manager (OEM 13.5) dashboards for proactive CPU/memory capacity tracking, session wait-state analysis, tablespace growth prediction, and deadlock alert broadcasts.</li>
+                <li><strong>Disaster Recovery &amp; RMAN Backups:</strong> Implemented robust zero-data-loss RMAN backup and recovery architectures (Full, Incremental, Cumulative), catalog administration, and routine simulated point-in-time recovery validations.</li>
+                <li><strong>BI Dashboards &amp; Data Warehousing:</strong> Developed enterprise financial reporting dashboards in Power BI utilizing advanced DAX measures, data modeling, and automated SSIS ETL extraction pipelines.</li>
+                <li><strong>Security Governance &amp; Linux Automation:</strong> Managed database security profiles, user access roles, and audit compliance policies using customized Linux Shell (Bash) scripts.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section: Flagship Projects -->
+          <div class="resume-paper-section">
+            <h3 class="paper-section-title">FLAGSHIP PROJECTS &amp; ACHIEVEMENTS</h3>
+            <div class="paper-proj-item">
+              <div class="proj-title-row">
+                <strong>1. AGIC Enterprise e-Procurement &amp; RFQ Portal v2.0</strong>
+                <span class="proj-tech">[PostgreSQL 16, FastAPI, React 19, SQLAlchemy 2.0, Streaming ZIP, Docker, Nginx]</span>
+              </div>
+              <p>State government e-procurement platform for Amaravati Growth &amp; Infrastructure Corporation Limited (AGIC). Modernized state procurement workflows with dynamic market pricing, complete EMD elimination, isolated CE review centers, and a 6-step vendor bidding wizard supporting conglomerates (L&amp;T, Tata, Navayuga, MEIL). Built in-memory ZIP document streaming engine (io.BytesIO) and authored the official 8-volume documentation suite.</p>
+            </div>
+            <div class="paper-proj-item">
+              <div class="proj-title-row">
+                <strong>2. Amaravati Land CRM &amp; Executive Dashboard (ED-Tracker)</strong>
+                <span class="proj-tech">[PostgreSQL 18, FastAPI, psycopg 3, React 19, Chart.js, Excel Engine, Windows NSSM]</span>
+              </div>
+              <p>Designed a dedicated 70-column PostgreSQL 18 relational schema (crm.crm) tracking 117+ prime land parcels across Amaravati with real-time analytics, capital outlay monitoring, milestone stage progression, and mutation audit logs. Engineered an automated two-way Excel integration with 69-column validation modals and authored the official 7-volume documentation suite.</p>
+            </div>
+            <div class="paper-proj-item">
+              <div class="proj-title-row">
+                <strong>3. AP Nirman Infrastructure Procurement</strong>
+                <span class="proj-tech">[Oracle 11g, PL/SQL, Linux Shell, CFMS API]</span>
+              </div>
+              <p>Streamlined public procurement workflows and financial settlement integrations with CFMS for the Government of Andhra Pradesh. Engineered high-throughput PL/SQL stored procedures, reducing report runtimes by 40%.</p>
+            </div>
+            <div class="paper-proj-item">
+              <div class="proj-title-row">
+                <strong>4. BLIL Corporate Financial &amp; Executive BI Intelligence Suite</strong>
+                <span class="proj-tech">[Power BI, Advanced DAX, SSIS ETL, SQL Server 2019]</span>
+              </div>
+              <p>Designed scalable tabular data models and automated end-to-end SSIS ETL pipelines consolidating multi-source financial ledgers, drastically reducing monthly financial reconciliation cycles.</p>
+            </div>
+            <div class="paper-proj-item">
+              <div class="proj-title-row">
+                <strong>5. Production High Availability &amp; Disaster Recovery Automation Suite</strong>
+                <span class="proj-tech">[SQL Server AlwaysOn, Oracle RMAN, PowerShell, OEM 13.5]</span>
+              </div>
+              <p>Constructed proactive monitoring and automated disaster recovery failover architectures across SQL Server AlwaysOn Availability Groups and Oracle databases with automated DMV deadlock inspection.</p>
+            </div>
+          </div>
+
+          <!-- Section: Documentation Volumes -->
+          <div class="resume-paper-section">
+            <h3 class="paper-section-title">AUTHOR OF 15 OFFICIAL TECHNICAL DOCUMENTATION VOLUMES</h3>
+            <ul class="paper-bullets">
+              <li><strong>AGIC RFQ Portal Complete Documentation Suite (8 Volumes):</strong> Vol 01: System Architecture &amp; DB Design | Vol 02: User Manual &amp; Operational Workflows | Vol 03: Codebase Directory Map | Vol 04: Production Deployment Guide | Vol 05: REST API Reference | Vol 06: Non-SoR Governance | Vol 07: Design System Guide | Vol 08: Master File Inventory &amp; Disaster Recovery.</li>
+              <li><strong>Amaravati Land CRM (ED-Tracker) Documentation Suite (7 Volumes):</strong> Vol 01: Operations &amp; User Manual | Vol 02: Technical Stack &amp; Architecture | Vol 03: REST API Reference | Vol 04: Component Directory | Vol 05: Database Schema Dictionary &amp; Credentials | Vol 06: Deployment &amp; NSSM Services | Vol 07: Implementation &amp; Master Troubleshooting Guide.</li>
+            </ul>
+          </div>
+
+          <!-- Section: Education & Details -->
+          <div class="resume-paper-section">
+            <h3 class="paper-section-title">EDUCATION &amp; PERSONAL DETAILS</h3>
+            <p><strong>Bachelor of Science in Computer Science (B.Sc.)</strong> — Acharya Nagarjuna University</p>
+            <p><strong>Languages:</strong> English, Telugu, Hindi &nbsp;|&nbsp; <strong>Location:</strong> Bapatla District, Andhra Pradesh, India &nbsp;|&nbsp; <strong>Date of Birth:</strong> 01 November 1997</p>
+            <p style="font-style: italic; color: #64748b; margin-top: 0.5rem;">I hereby declare that the information provided above is true and authentic to the best of my knowledge and professional experience. — <strong>KOTAGIRI KIRAN TEJA</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
