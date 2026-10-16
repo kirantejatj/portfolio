@@ -86,8 +86,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   z-index: -1;
   pointer-events: none;
   opacity: 0.8;
@@ -130,8 +132,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   z-index: -1;
   background-size: 60px 60px;
   background-image: 
@@ -394,8 +398,10 @@ section {
 
 .hero-buttons {
   display: flex;
-  gap: 1.25rem;
-  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  max-width: 100%;
 }
 
 /* Button with shimmer */
@@ -780,6 +786,13 @@ section {
   padding-left: 1.5rem;
   margin: 1.5rem 0 2rem 0;
   text-shadow: 0 0 10px rgba(249, 115, 22, 0.15);
+}
+
+.stats-circle-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .stat-circle-box {
@@ -1903,28 +1916,89 @@ footer {
   }
 
   .hero {
-    padding-top: 6rem;
+    padding-top: 5.5rem;
     padding-bottom: 2.5rem;
+    min-height: auto;
+  }
+
+  .hero-profile-area {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .profile-container {
+    margin: 0 auto 1rem auto;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .section-tag {
+    text-align: center;
+    display: inline-block;
+    max-width: 100%;
+    word-break: break-word;
+    white-space: normal;
+    letter-spacing: clamp(1px, 0.4vw, 2.5px);
+    font-size: clamp(0.72rem, 3.2vw, 0.85rem);
+    line-height: 1.5;
   }
 
   .hero-content h1 {
-    font-size: clamp(2.35rem, 8vw, 3.4rem);
+    font-size: clamp(2.1rem, 7.5vw, 3.2rem);
     letter-spacing: -0.5px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.25rem;
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+    font-size: clamp(0.92rem, 3.5vw, 1.15rem);
+    margin: 0 auto 2rem auto;
+    text-align: center;
+    max-width: 100%;
+    word-break: break-word;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 2.5rem auto;
+    gap: 0.75rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.92rem;
+  }
+
+  .social-links {
+    justify-content: center;
+    width: 100%;
   }
 
   .terminal-widget {
     height: 350px;
     font-size: 0.8rem;
+    width: 100%;
+    max-width: 100%;
   }
 
-  .stats-grid {
+  .stats-circle-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.15rem;
+    width: 100%;
   }
 
   .stat-circle-box {
@@ -1938,6 +2012,7 @@ footer {
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.75rem;
+    width: 100%;
   }
 
   .project-card .project-body {
@@ -2040,12 +2115,14 @@ footer {
   }
 
   .hero-content h1 {
-    font-size: clamp(2rem, 8vw, 2.5rem);
+    font-size: clamp(1.85rem, 7.5vw, 2.35rem);
   }
 
   .hero-profile-area {
     align-items: center;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
   }
 
   .profile-container {
@@ -2069,33 +2146,40 @@ footer {
     height: 138px;
   }
 
-  .hero-btns {
+  .hero-buttons {
+    display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 100%;
     gap: 0.75rem;
+    margin: 0 auto 2rem auto;
   }
 
-  .hero-btns .btn {
+  .hero-buttons .btn {
     width: 100%;
     justify-content: center;
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
   }
 
   .social-links {
     justify-content: center;
+    width: 100%;
   }
 
   .section-tag {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
+    font-size: clamp(0.7rem, 3vw, 0.78rem);
+    letter-spacing: 1.5px;
   }
 
   .section-title {
     font-size: 1.85rem;
   }
 
-  .stats-grid {
+  .stats-circle-container {
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
+    width: 100%;
   }
 
   .stat-circle-box {
