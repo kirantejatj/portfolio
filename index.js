@@ -194,6 +194,7 @@ Available commands:
   <span class="cmd-cmd">resume</span>       : View &amp; download official resume (DOCX/PDF)
   <span class="cmd-cmd">rfq</span>          : Inspect AGIC RFQ Portal v2.0 specs
   <span class="cmd-cmd">edtracker</span>    : Inspect Amaravati Land CRM specs
+  <span class="cmd-cmd">apcrda</span>       : Inspect APCRDA Database Optimization specs
   <span class="cmd-cmd">docs</span>         : List 15 authored official technical manuals
   <span class="cmd-cmd">architecture</span> : View enterprise multi-tier topology
   <span class="cmd-cmd">projects</span>     : Display highlight project details
@@ -242,6 +243,19 @@ Available commands:
   - Interactive Chart.js KPI graph builder & PPT milestone stage filtering
   - Complete immutable security mutation audit logs (crm.audit_logs)
 • Documentation  : Complete 7-Volume Official Technical & User Manual Suite
+`,
+    apcrda: `
+<span class="cmd-header">[ APCRDA ENTERPRISE DATABASE DEVELOPMENT & OPTIMIZATION ]</span>
+• Organization   : Andhra Pradesh Capital Region Development Authority (APCRDA)
+• Role           : Database Engineer / DBA (March 2025 – Present)
+• Technologies   : MS SQL Server 2019, T-SQL, Stored Procedures, Views, DMVs, Execution Plans, Indexing, SQL Server Agent
+• Key Workflows  :
+  - Land Pooling Scheme (LPS) business logic & T-SQL data workflow development
+  - Farmer lottery allocation & land allotment data processing
+  - Pension processing & annuity disbursement database operations
+  - Query performance optimization via DMVs, execution plans & index tuning
+  - Automated recurring SQL Server Agent jobs for backup & maintenance
+  - Cross-table validation & strict data consistency governance
 `,
     docs: `
 <span class="cmd-header">[ AUTHOR OF 15 OFFICIAL TECHNICAL DOCUMENTATION VOLUMES ]</span>
@@ -303,10 +317,11 @@ Available commands:
 <span class="cmd-header">[ HIGHLIGHT PROJECT REPOSITORY ]</span>
 • <span class="cmd-success">AGIC RFQ Portal v2.0</span>: Complete state e-procurement platform (FastAPI, React 19, PostgreSQL 16, Streaming ZIP, 8-vol docs).
 • <span class="cmd-success">Amaravati Land CRM</span>: Executive land parcel & capital tracker (PostgreSQL 18, 70-col schema, Excel engine, 7-vol docs).
+• <span class="cmd-success">APCRDA Database Optimization</span>: SQL Server 2019 LPS & farmer lottery workflows, DMV query tuning, SQL Agent automation.
 • <span class="cmd-success">AP Nirman</span>: Govt infrastructure materials procurement with Oracle 11g, PL/SQL, and CFMS API.
 • <span class="cmd-success">BLIL Financial Analytics</span>: High-volume Power BI tabular models & nocturnal SSIS ETL pipelines.
 • <span class="cmd-success">HA & DR Automation Suite</span>: Proactive SQL AlwaysOn & Oracle RMAN monitoring via PowerShell & Bash.
-Type '<span class="cmd-cmd">rfq</span>' or '<span class="cmd-cmd">edtracker</span>' for deep system specifics!
+Type '<span class="cmd-cmd">rfq</span>', '<span class="cmd-cmd">edtracker</span>', or '<span class="cmd-cmd">apcrda</span>' for deep system specifics!
 `,
     contact: `
 <span class="cmd-header">[ CONTACT DIRECTORY ]</span>

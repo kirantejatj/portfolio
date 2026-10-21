@@ -202,7 +202,7 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
           Specialized in bridging deep database internals with full-scale production software delivery. I manage production SQL Server (AlwaysOn Availability Groups, replication, failover clusters) and Oracle EBS environments (cloning, OEM 13.5, RMAN backup &amp; disaster recovery), tuning transaction bottlenecks through execution plans and DMV diagnostics.
         </p>
         <p>
-          Beyond traditional DBA operations, I have single-handedly designed, developed, and deployed full-scale production platforms for government entities including **APCRDA** and **AGIC**—notably the **Enterprise RFQ e-Procurement Portal v2.0** and the **Amaravati Land CRM &amp; Executive Dashboard (ED-Tracker)**. My engineering spans 70-column relational schemas in PostgreSQL 16/18, asynchronous FastAPI REST APIs with granular RBAC, dynamic Excel bulk parsing engines, React 19 dashboards, and 15+ official technical documentation volumes.
+          Beyond traditional DBA operations, I lead production engineering for government entities including <strong>APCRDA</strong> and <strong>AGIC</strong>—notably developing the <strong>Enterprise RFQ e-Procurement Portal v2.0</strong>, the <strong>Amaravati Land CRM &amp; Executive Dashboard (ED-Tracker)</strong>, and mission-critical <strong>SQL Server 2019 enterprise database development &amp; performance tuning</strong> for the Land Pooling Scheme (LPS), farmer lottery allocation, and pension workflows. My engineering spans 70-column relational schemas in PostgreSQL 16/18, asynchronous FastAPI REST APIs with granular RBAC, dynamic Excel bulk parsing engines, React 19 dashboards, and 15+ official technical documentation volumes.
         </p>
       </div>
 
@@ -217,7 +217,7 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
           <div class="stat-title">SLA Uptime</div>
         </div>
         <div class="stat-circle-box">
-          <div class="stat-num"><span class="stat-num-value" data-target="2" data-float="false">2</span><span></span></div>
+          <div class="stat-num"><span class="stat-num-value" data-target="3" data-float="false">3</span><span></span></div>
           <div class="stat-title">Flagship Platforms</div>
         </div>
         <div class="stat-circle-box">
@@ -449,6 +449,7 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
             <li><strong>Enterprise Relational Modeling (PostgreSQL 16/18):</strong> Architected high-throughput schemas including <code>RFQ_DB</code> (tenders, line-item partitioning, multi-annexure submissions, audit trails) and <code>crm.crm</code> (70-column master land parcel schema with automated sequences and foreign key dependencies).</li>
             <li><strong>High-Performance FastAPI REST Backends:</strong> Developed 30+ asynchronous REST API endpoints with Pydantic v2 validation, JWT authentication, granular RBAC (<code>require_read/write_permission</code>), officer data isolation filters, and in-memory streaming ZIP archive generation (<code>io.BytesIO</code>).</li>
             <li><strong>Two-Way Excel Engine &amp; Analytics Dashboards:</strong> Engineered automated Excel template generators and 69-column bulk upload validation parsers with modal error-trapping, coupled with React 19 interactive Chart.js KPI builders and slide-out drawer views.</li>
+            <li><strong>APCRDA Enterprise Database Development &amp; Optimization:</strong> Developed and maintained SQL Server 2019 database objects (tables, complex queries, stored procedures, views) supporting APCRDA Land Pooling Scheme (LPS), farmer lottery allocation, pension processing, and annuity workflows. Leveraged execution plans, DMVs, and index tuning to eliminate query bottlenecks, and scheduled automated SQL Server Agent jobs for recurring backup and maintenance operations.</li>
             <li><strong>Production Database Administration &amp; High Availability:</strong> Maintained production SQL Server (2012–2019) AlwaysOn Availability Groups, failover clusters, log shipping, and automated PowerShell backup/diagnostic pipelines ensuring 99.99% uptime.</li>
             <li><strong>Authored 15 Official Engineering Documentation Volumes:</strong> Authored exhaustive 8-volume (RFQ Portal) and 7-volume (ED-Tracker) technical manual suites spanning architecture diagrams, database dictionaries, REST API specs, and disaster recovery runbooks.</li>
           </ul>
@@ -541,6 +542,45 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
             <span class="project-tag">Excel Engine</span>
             <span class="project-tag">JWT RBAC</span>
             <span class="project-tag">Windows NSSM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- APCRDA Enterprise Database Development & Production Optimization -->
+      <div class="project-card">
+        <div class="project-body">
+          <div>
+            <div class="project-badge gold"><i class="fa-solid fa-server"></i> Government Enterprise DB Project</div>
+            <div class="project-icon"><i class="fa-solid fa-database"></i></div>
+            <h3 class="project-title">APCRDA Enterprise Database Development &amp; Optimization</h3>
+            <div style="font-size: 0.85rem; font-style: italic; color: var(--secondary); margin-bottom: 0.85rem;">
+              Government of Andhra Pradesh | Database Engineering Project (March 2025 – Present)
+            </div>
+            <p class="project-desc">
+              Engineered, maintained, and optimized mission-critical Microsoft SQL Server 2019 database infrastructures and operational data workflows for the Andhra Pradesh Capital Region Development Authority (APCRDA), ensuring high performance, zero data loss, and regulatory compliance.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>Database Design &amp; Development:</strong> Developed and maintained SQL Server database objects, including tables, complex queries, stored procedures, and views to support government business applications and operational reporting.</li>
+              <li><strong>Business Logic Implementation:</strong> Implemented and modified T-SQL logic for Land Pooling Scheme (LPS), farmer lottery allocation, pension processing, and annuity-related data workflows based on business requirements.</li>
+              <li><strong>Query Performance Optimization:</strong> Analyzed execution plans, reviewed indexing strategies, and used Dynamic Management Views (DMVs) to investigate slow-running queries and optimize database performance.</li>
+              <li><strong>Production Database Administration:</strong> Managed database maintenance activities, backup monitoring, SQL Server Agent jobs, database storage, and transaction log troubleshooting across production environments.</li>
+              <li><strong>Data Validation &amp; Integrity:</strong> Performed data verification, cross-table validation, and controlled database modifications to maintain data accuracy and consistency across business-critical records.</li>
+              <li><strong>Automated Database Operations:</strong> Scheduled and monitored SQL Server Agent jobs for recurring backup and administrative activities, improving operational efficiency and reducing manual intervention.</li>
+              <li><strong>Production Issue Resolution:</strong> Diagnosed and resolved database errors, query bottlenecks, transaction log growth, and job execution failures to support reliable database operations.</li>
+              <li><strong>Reporting &amp; Data Processing:</strong> Developed and optimized SQL queries and views to support lottery allocation, farmer information, pension records, and other government reporting requirements.</li>
+            </ul>
+          </div>
+          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+            <span class="project-tag">MS SQL Server 2019</span>
+            <span class="project-tag">T-SQL</span>
+            <span class="project-tag">Stored Procedures</span>
+            <span class="project-tag">Views</span>
+            <span class="project-tag">Query Optimization</span>
+            <span class="project-tag">SQL Server Agent</span>
+            <span class="project-tag">DMVs</span>
+            <span class="project-tag">Execution Plans</span>
+            <span class="project-tag">Indexing</span>
+            <span class="project-tag">Backup &amp; Recovery</span>
           </div>
         </div>
       </div>
@@ -792,6 +832,7 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
                 <li><strong>Asynchronous Microservices Engine (FastAPI &amp; Python 3.14):</strong> Developed 30+ asynchronous REST API endpoints with Pydantic v2 data validation, SQLAlchemy 2.0 ORM, JWT token authentication, granular RBAC (<code>require_read/write_permission</code>), and multi-officer tenancy isolation.</li>
                 <li><strong>Dynamic In-Memory ZIP Streaming Engine:</strong> Architected high-speed on-the-fly document packaging using Python <code>zipfile</code> and in-memory <code>io.BytesIO</code> streaming buffers for bulk multi-file vendor dossier exports with zero temporary disk clutter.</li>
                 <li><strong>Two-Way Excel Batch Engine &amp; Modern Frontend (React 19 &amp; Vite):</strong> Built custom 69-column Excel master template generators and automated bulk upload parsers with modal error-trapping, coupled with responsive React 19 UIs and Chart.js dynamic KPI graph builders.</li>
+                <li><strong>APCRDA Enterprise Database Development &amp; Optimization:</strong> Developed and maintained SQL Server 2019 database objects (tables, complex queries, stored procedures, views) supporting APCRDA Land Pooling Scheme (LPS), farmer lottery allocation, pension processing, and annuity workflows. Leveraged execution plans, DMVs, and index tuning to eliminate query bottlenecks, and scheduled automated SQL Server Agent jobs for recurring backup and maintenance operations.</li>
                 <li><strong>Mission-Critical SQL Server (2012–2019) High Availability:</strong> Managed production AlwaysOn Availability Groups, failover clusters, and log shipping, maintaining a verified <strong>99.99% system SLA uptime</strong>.</li>
                 <li><strong>Authored 15 Official Engineering Documentation Volumes:</strong> Single-handedly authored complete 8-volume (RFQ Portal) and 7-volume (ED-Tracker) technical manual suites covering system architecture, ER dictionaries, REST API specs, and disaster recovery runbooks.</li>
               </ul>
@@ -834,21 +875,28 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
             </div>
             <div class="paper-proj-item">
               <div class="proj-title-row">
-                <strong>3. AP Nirman Infrastructure Procurement</strong>
+                <strong>3. APCRDA Enterprise Database Development &amp; Optimization</strong>
+                <span class="proj-tech">[Microsoft SQL Server 2019, T-SQL, Stored Procedures, Views, DMVs, Execution Plans, Indexing, SQL Server Agent, Backup &amp; Recovery]</span>
+              </div>
+              <p>Government of Andhra Pradesh Database Engineering Project (March 2025 – Present). Engineered and maintained SQL Server 2019 database objects and business logic for the Andhra Pradesh Capital Region Development Authority (APCRDA). Implemented T-SQL workflows for Land Pooling Scheme (LPS), farmer lottery allocation, pension processing, and annuity distribution. Conducted query performance tuning via execution plans and DMVs, scheduled automated SQL Server Agent backup/maintenance jobs, and maintained strict data integrity across business-critical records.</p>
+            </div>
+            <div class="paper-proj-item">
+              <div class="proj-title-row">
+                <strong>4. AP Nirman Infrastructure Procurement</strong>
                 <span class="proj-tech">[Oracle 11g, PL/SQL, Linux Shell, CFMS API]</span>
               </div>
               <p>Streamlined public procurement workflows and financial settlement integrations with CFMS for the Government of Andhra Pradesh. Engineered high-throughput PL/SQL stored procedures, reducing report runtimes by 40%.</p>
             </div>
             <div class="paper-proj-item">
               <div class="proj-title-row">
-                <strong>4. BLIL Corporate Financial &amp; Executive BI Intelligence Suite</strong>
+                <strong>5. BLIL Corporate Financial &amp; Executive BI Intelligence Suite</strong>
                 <span class="proj-tech">[Power BI, Advanced DAX, SSIS ETL, SQL Server 2019]</span>
               </div>
               <p>Designed scalable tabular data models and automated end-to-end SSIS ETL pipelines consolidating multi-source financial ledgers, drastically reducing monthly financial reconciliation cycles.</p>
             </div>
             <div class="paper-proj-item">
               <div class="proj-title-row">
-                <strong>5. Production High Availability &amp; Disaster Recovery Automation Suite</strong>
+                <strong>6. Production High Availability &amp; Disaster Recovery Automation Suite</strong>
                 <span class="proj-tech">[SQL Server AlwaysOn, Oracle RMAN, PowerShell, OEM 13.5]</span>
               </div>
               <p>Constructed proactive monitoring and automated disaster recovery failover architectures across SQL Server AlwaysOn Availability Groups and Oracle databases with automated DMV deadlock inspection.</p>
