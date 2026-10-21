@@ -484,7 +484,7 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
       <!-- AGIC RFQ Portal v2.0 (Flagship System 1) -->
       <div class="project-card">
         <div class="project-body">
-          <div>
+          <div class="project-content-main">
             <div class="project-badge gold"><i class="fa-solid fa-star"></i> Flagship Production Platform</div>
             <div class="project-icon"><i class="fa-solid fa-file-contract"></i></div>
             <h3 class="project-title">AGIC Enterprise RFQ Portal v2.0</h3>
@@ -494,13 +494,13 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
             <ul class="project-highlights">
               <li>Dual React 19 portals: Chief Engineer Review Center &amp; 6-Step Vendor Bidding Wizard (L&amp;T, Tata, Navayuga, MEIL).</li>
               <li>PostgreSQL 16 relational design (<code>RFQ_DB</code>) with line-item partitioning, Annexure I/II/III capture, and immutable audit logs.</li>
-              <li>FastAPI asynchronous backend with JWT RBAC, dynamic on-the-fly streaming ZIP document archive generator (<code>io.BytesIO</code>), and Non-SoR committee governance.</li>
+              <li>FastAPI asynchronous backend with JWT RBAC, dynamic streaming ZIP document packaging (<code>io.BytesIO</code>), and Non-SoR governance.</li>
             </ul>
             <div class="project-docs-badge">
               <i class="fa-solid fa-book-bookmark"></i> Authored 8-Volume Official Technical &amp; Disaster Recovery Suite
             </div>
           </div>
-          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+          <div class="project-tech-stack">
             <span class="project-tag">PostgreSQL 16</span>
             <span class="project-tag">FastAPI</span>
             <span class="project-tag">Python 3.14</span>
@@ -517,7 +517,7 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
       <!-- Amaravati Land CRM & Executive Dashboard (Flagship System 2) -->
       <div class="project-card">
         <div class="project-body">
-          <div>
+          <div class="project-content-main">
             <div class="project-badge gold"><i class="fa-solid fa-chart-pie"></i> Executive Government CRM</div>
             <div class="project-icon"><i class="fa-solid fa-layer-group"></i></div>
             <h3 class="project-title">Amaravati Land CRM (ED-Tracker)</h3>
@@ -525,15 +525,15 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
               Designed and built from scratch an enterprise land allotment tracking and CRM platform for Government of Andhra Pradesh executive leadership. Tracks 117+ prime land parcels across Amaravati with real-time analytics, capital outlay monitoring, and milestone stage progression.
             </p>
             <ul class="project-highlights">
-              <li>Engineered 70-column PostgreSQL 18 relational schema (<code>crm.crm</code>) with sequence tracking, foreign keys, and complete mutation audit trails.</li>
-              <li>Engineered two-way Excel parser: automated master template generator &amp; 69-column bulk upload validator with custom error-trapping modal.</li>
-              <li>FastAPI backend (19 REST endpoints) with <code>psycopg 3</code>, JWT authentication, granular RBAC (<code>read/write permissions</code>), and Chart.js dynamic KPI graph builder.</li>
+              <li>Engineered 70-column PostgreSQL 18 relational schema (<code>crm.crm</code>) with sequence tracking, foreign keys, and mutation audit trails.</li>
+              <li>Engineered two-way Excel parser: automated master template generator &amp; 69-column bulk upload validator with error-trapping modal.</li>
+              <li>FastAPI backend (19 REST endpoints) with <code>psycopg 3</code>, JWT authentication, granular RBAC (<code>read/write permissions</code>), and Chart.js KPI builder.</li>
             </ul>
             <div class="project-docs-badge">
               <i class="fa-solid fa-book-bookmark"></i> Authored 7-Volume Official Technical &amp; Operations Manual Suite
             </div>
           </div>
-          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+          <div class="project-tech-stack">
             <span class="project-tag">PostgreSQL 18</span>
             <span class="project-tag">FastAPI</span>
             <span class="project-tag">psycopg 3</span>
@@ -549,28 +549,23 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
       <!-- APCRDA Enterprise Database Development & Production Optimization -->
       <div class="project-card">
         <div class="project-body">
-          <div>
+          <div class="project-content-main">
             <div class="project-badge gold"><i class="fa-solid fa-server"></i> Government Enterprise DB Project</div>
             <div class="project-icon"><i class="fa-solid fa-database"></i></div>
-            <h3 class="project-title">APCRDA Enterprise Database Development &amp; Optimization</h3>
-            <div style="font-size: 0.85rem; font-style: italic; color: var(--secondary); margin-bottom: 0.85rem;">
-              Government of Andhra Pradesh | Database Engineering Project (March 2025 – Present)
-            </div>
+            <h3 class="project-title">APCRDA Database Development &amp; Optimization</h3>
             <p class="project-desc">
               Engineered, maintained, and optimized mission-critical Microsoft SQL Server 2019 database infrastructures and operational data workflows for the Andhra Pradesh Capital Region Development Authority (APCRDA), ensuring high performance, zero data loss, and regulatory compliance.
             </p>
             <ul class="project-highlights">
-              <li><strong>Database Design &amp; Development:</strong> Developed and maintained SQL Server database objects, including tables, complex queries, stored procedures, and views to support government business applications and operational reporting.</li>
-              <li><strong>Business Logic Implementation:</strong> Implemented and modified T-SQL logic for Land Pooling Scheme (LPS), farmer lottery allocation, pension processing, and annuity-related data workflows based on business requirements.</li>
-              <li><strong>Query Performance Optimization:</strong> Analyzed execution plans, reviewed indexing strategies, and used Dynamic Management Views (DMVs) to investigate slow-running queries and optimize database performance.</li>
-              <li><strong>Production Database Administration:</strong> Managed database maintenance activities, backup monitoring, SQL Server Agent jobs, database storage, and transaction log troubleshooting across production environments.</li>
-              <li><strong>Data Validation &amp; Integrity:</strong> Performed data verification, cross-table validation, and controlled database modifications to maintain data accuracy and consistency across business-critical records.</li>
-              <li><strong>Automated Database Operations:</strong> Scheduled and monitored SQL Server Agent jobs for recurring backup and administrative activities, improving operational efficiency and reducing manual intervention.</li>
-              <li><strong>Production Issue Resolution:</strong> Diagnosed and resolved database errors, query bottlenecks, transaction log growth, and job execution failures to support reliable database operations.</li>
-              <li><strong>Reporting &amp; Data Processing:</strong> Developed and optimized SQL queries and views to support lottery allocation, farmer information, pension records, and other government reporting requirements.</li>
+              <li>Developed and maintained SQL Server database objects (tables, complex queries, stored procedures, views) powering government business operations.</li>
+              <li>Implemented and refined robust T-SQL logic for Land Pooling Scheme (LPS), farmer lottery allocation, pension processing, and annuity-related workflows.</li>
+              <li>Optimized query performance via execution plans, DMVs, and indexing; scheduled automated SQL Server Agent backup/maintenance jobs for zero data loss.</li>
             </ul>
+            <div class="project-docs-badge">
+              <i class="fa-solid fa-database"></i> Land Pooling Scheme (LPS) &amp; Enterprise Database Optimization Suite
+            </div>
           </div>
-          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+          <div class="project-tech-stack">
             <span class="project-tag">MS SQL Server 2019</span>
             <span class="project-tag">T-SQL</span>
             <span class="project-tag">Stored Procedures</span>
@@ -588,7 +583,7 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
       <!-- AP Nirman -->
       <div class="project-card">
         <div class="project-body">
-          <div>
+          <div class="project-content-main">
             <div class="project-badge"><i class="fa-solid fa-landmark"></i> State Infra System</div>
             <div class="project-icon"><i class="fa-solid fa-landmark"></i></div>
             <h3 class="project-title">AP Nirman Infrastructure Procurement</h3>
@@ -600,8 +595,11 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
               <li>Integrated secure CFMS government treasury API endpoints for invoice verification.</li>
               <li>Automated scheduled database health audits and transactional consistency verification.</li>
             </ul>
+            <div class="project-docs-badge">
+              <i class="fa-solid fa-building-columns"></i> CFMS Treasury &amp; Government Payment Gateway Integration
+            </div>
           </div>
-          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+          <div class="project-tech-stack">
             <span class="project-tag">Oracle 11g</span>
             <span class="project-tag">PL/SQL</span>
             <span class="project-tag">Linux Bash</span>
@@ -614,7 +612,7 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
       <!-- BLIL Financial Reports -->
       <div class="project-card">
         <div class="project-body">
-          <div>
+          <div class="project-content-main">
             <div class="project-badge"><i class="fa-solid fa-chart-line"></i> Corporate BI Intelligence</div>
             <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
             <h3 class="project-title">BLIL Financial Analytics Suite</h3>
@@ -626,8 +624,11 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
               <li>Automated nocturnal SSIS ETL extraction, transformation, and incremental loading routines.</li>
               <li>Enhanced data refresh efficiency and eliminated manual spreadsheet reconciliation errors.</li>
             </ul>
+            <div class="project-docs-badge">
+              <i class="fa-solid fa-chart-pie"></i> Nocturnal SSIS ETL &amp; Multi-Tier DAX Financial Modeling
+            </div>
           </div>
-          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+          <div class="project-tech-stack">
             <span class="project-tag">Power BI</span>
             <span class="project-tag">DAX Query</span>
             <span class="project-tag">SSIS ETL</span>
@@ -640,7 +641,7 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
       <!-- DB HA & DR Automation -->
       <div class="project-card">
         <div class="project-body">
-          <div>
+          <div class="project-content-main">
             <div class="project-badge"><i class="fa-solid fa-shield-halved"></i> 24/7 Production Operations</div>
             <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
             <h3 class="project-title">High Availability &amp; DR Automation</h3>
@@ -652,8 +653,11 @@ Try typing '<span class="hl">rfq</span>', '<span class="hl">edtracker</span>', '
               <li>Automated DMV scripts tracking active locks, buffer hit ratios, and index fragmentation.</li>
               <li>Built PowerShell &amp; Bash automation broadcasting incident dispatches before SLA breaches.</li>
             </ul>
+            <div class="project-docs-badge">
+              <i class="fa-solid fa-shield-halved"></i> 99.99% Uptime AlwaysOn &amp; Zero-Data-Loss RMAN Recovery
+            </div>
           </div>
-          <div class="project-tech-stack" style="margin-top: 1.25rem;">
+          <div class="project-tech-stack">
             <span class="project-tag">SQL Server AlwaysOn</span>
             <span class="project-tag">Oracle RMAN</span>
             <span class="project-tag">PowerShell</span>
