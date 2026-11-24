@@ -634,7 +634,7 @@ section {
 }
 
 /* GLOSSY CARD WITH SHINING GOLD EDGES & SHIMMER */
-.metric-card, .project-card, .timeline-content, .contact-form-panel, .stat-circle-box, .skills-display-panel {
+.metric-card, .project-card, .timeline-content, .contact-form-panel, .stat-circle-box, .skills-display-panel, .live-experience-card {
   background: var(--bg-card);
   border: 1px solid rgba(255, 215, 0, 0.22); /* Shining gold edges */
   border-radius: 14px;
@@ -649,7 +649,7 @@ section {
 }
 
 /* Gold Shimmer sweeping light effect */
-.metric-card::before, .project-card::before, .timeline-content::before, .contact-form-panel::before, .stat-circle-box::before, .skills-display-panel::before {
+.metric-card::before, .project-card::before, .timeline-content::before, .contact-form-panel::before, .stat-circle-box::before, .skills-display-panel::before, .live-experience-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -663,7 +663,7 @@ section {
   z-index: 3;
 }
 
-.metric-card:hover::before, .project-card:hover::before, .timeline-content:hover::before, .contact-form-panel:hover::before, .stat-circle-box:hover::before, .skills-display-panel:hover::before {
+.metric-card:hover::before, .project-card:hover::before, .timeline-content:hover::before, .contact-form-panel:hover::before, .stat-circle-box:hover::before, .skills-display-panel:hover::before, .live-experience-card:hover::before {
   left: 150%;
 }
 
@@ -684,7 +684,7 @@ section {
 }
 
 /* High Hover shine gold edges */
-.metric-card:hover, .project-card:hover, .timeline-content:hover, .contact-form-panel:hover, .stat-circle-box:hover, .skills-display-panel:hover {
+.metric-card:hover, .project-card:hover, .timeline-content:hover, .contact-form-panel:hover, .stat-circle-box:hover, .skills-display-panel:hover, .live-experience-card:hover {
   transform: translateY(-8px);
   border-color: rgba(255, 215, 0, 0.6); /* Bright golden highlight on hover */
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 
@@ -935,6 +935,122 @@ section {
   box-shadow: 0 0 8px var(--primary-glow);
 }
 
+/* ==========================================================================
+   Live Professional Experience Counter
+   ========================================================================== */
+.live-experience-card {
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  padding: 2.25rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.live-exp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.95rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #34d399;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981, 0 0 20px #10b981;
+  display: inline-block;
+  animation: liveExpPulse 2s infinite ease-in-out;
+}
+
+@keyframes liveExpPulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.live-exp-counter {
+  font-family: var(--font-mono);
+  font-size: 1.45rem;
+  color: var(--text-main);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.65rem;
+  line-height: 1.4;
+  margin-bottom: 1.15rem;
+}
+
+.live-exp-counter .exp-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.live-exp-counter .exp-num {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--secondary);
+  text-shadow: 0 0 16px var(--secondary-glow);
+  min-width: 1.2ch;
+  text-align: right;
+  display: inline-block;
+}
+
+.live-exp-counter .exp-unit {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-gold-muted);
+}
+
+.live-exp-counter .exp-sep {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.35rem;
+  margin: 0 0.15rem;
+  user-select: none;
+}
+
+.live-exp-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.live-exp-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.live-exp-meta-item i {
+  color: var(--primary);
+  font-size: 0.8rem;
+}
+
+.live-exp-meta-sep {
+  color: var(--border-color);
+}
+
 /* Experience Timeline */
 .timeline {
   position: relative;
@@ -1156,8 +1272,9 @@ section {
   border: 1px solid rgba(255, 215, 0, 0.25);
   padding: 0.4rem 0.85rem;
   border-radius: 6px;
-  margin-top: auto;
+  margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+  width: fit-content;
   align-self: flex-start;
 }
 
@@ -1795,6 +1912,7 @@ footer {
     font-size: 1.45rem;
     max-width: 700px;
   }
+
   .terminal-widget {
     height: 470px;
     font-size: 0.95rem;
@@ -1842,6 +1960,7 @@ footer {
   .hero-profile-area {
     align-items: flex-start;
   }
+
   .terminal-widget {
     height: 380px;
     max-width: 100%;
@@ -2037,6 +2156,33 @@ footer {
     padding: 1.75rem 1.5rem;
   }
 
+  .live-experience-card {
+    padding: 1.65rem 1.15rem;
+    margin-bottom: 2rem;
+  }
+  .live-exp-counter {
+    font-size: 1.1rem;
+    gap: 0.35rem 0.5rem;
+  }
+  .live-exp-counter .exp-num {
+    font-size: 1.35rem;
+  }
+  .live-exp-counter .exp-unit {
+    font-size: 0.95rem;
+  }
+  .live-exp-counter .exp-sep {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  .live-exp-meta {
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+  }
+  .live-exp-meta-sep {
+    display: none;
+  }
+
   .timeline::before {
     left: 15px;
   }
@@ -2211,6 +2357,20 @@ footer {
   .stat-title {
     font-size: 0.72rem;
     letter-spacing: 1px;
+  }
+
+  .live-experience-card {
+    padding: 1.35rem 0.85rem;
+  }
+  .live-exp-counter {
+    font-size: 0.92rem;
+    gap: 0.25rem 0.35rem;
+  }
+  .live-exp-counter .exp-num {
+    font-size: 1.15rem;
+  }
+  .live-exp-counter .exp-unit {
+    font-size: 0.85rem;
   }
 
   .terminal-widget {

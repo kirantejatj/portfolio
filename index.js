@@ -31,7 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 10. MOBILE NAVIGATION DRAWER
   initMobileNav();
 
-  // 11. HEADER BG SCROLL TOGGLE
+  // 11. LIVE PROFESSIONAL EXPERIENCE COUNTER
+  initLiveExperienceCounter();
+
+  // 12. HEADER BG SCROLL TOGGLE
   window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
@@ -1109,4 +1112,94 @@ function initResumeCanvas() {
     setTimeout(handleModalResize, 150);
   });
 }
+
+/* ==========================================================================
+   12. Live Professional Experience Counter
+   Calculates live dynamic experience from career start: Nov 1, 2022 (IST)
+   Format: X Years : X Months : X Days : X Hours : X Minutes : X Seconds
+   ========================================================================== */
+function initLiveExperienceCounter() {
+  const elYears = document.getElementById('expYears');
+  const elMonths = document.getElementById('expMonths');
+  const elDays = document.getElementById('expDays');
+  const elHours = document.getElementById('expHours');
+  const elMinutes = document.getElementById('expMinutes');
+  const elSeconds = document.getElementById('expSeconds');
+
+  if (!elYears || !elMonths || !elDays || !elHours || !elMinutes || !elSeconds) return;
+
+  // Career inception anchor: November 1, 2022 00:00:00 IST
+  const startDate = new Date(2022, 10, 1, 0, 0, 0);
+
+  function getISTDate(date) {
+    const utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+    const istOffset = 5.5 * 60 * 60 * 1000;
+    return new Date(utc + istOffset);
+  }
+
+  function updateCounter() {
+    const nowIST = getISTDate(new Date());
+
+    let curYear = nowIST.getFullYear();
+    let curMonth = nowIST.getMonth();
+    let curDay = nowIST.getDate();
+    let curHours = nowIST.getHours();
+    let curMinutes = nowIST.getMinutes();
+    let curSeconds = nowIST.getSeconds();
+
+    let startYear = startDate.getFullYear();
+    let startMonth = startDate.getMonth();
+    let startDay = startDate.getDate();
+    let startHours = startDate.getHours();
+    let startMinutes = startDate.getMinutes();
+    let startSeconds = startDate.getSeconds();
+
+    let seconds = curSeconds - startSeconds;
+    if (seconds < 0) {
+      seconds += 60;
+      curMinutes--;
+    }
+
+    let minutes = curMinutes - startMinutes;
+    if (minutes < 0) {
+      minutes += 60;
+      curHours--;
+    }
+
+    let hours = curHours - startHours;
+    if (hours < 0) {
+      hours += 24;
+      curDay--;
+    }
+
+    let days = curDay - startDay;
+    if (days < 0) {
+      const prevMonth = new Date(curYear, curMonth, 0);
+      days += prevMonth.getDate();
+      curMonth--;
+    }
+
+    let months = curMonth - startMonth;
+    if (months < 0) {
+      months += 12;
+      curYear--;
+    }
+
+    let years = curYear - startYear;
+
+    elYears.textContent = years;
+    elMonths.textContent = months;
+    elDays.textContent = days;
+    elHours.textContent = hours < 10 ? '0' + hours : hours;
+    elMinutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+    elSeconds.textContent = seconds < 10 ? '0' + seconds : seconds;
+  }
+
+  // Initial calculation immediately
+  updateCounter();
+
+  // Tick every second
+  setInterval(updateCounter, 1000);
+}
+
 
