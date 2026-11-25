@@ -1115,7 +1115,7 @@ function initResumeCanvas() {
 
 /* ==========================================================================
    12. Live Professional Experience Counter
-   Calculates live dynamic experience from career start: Nov 1, 2022 (IST)
+   Calculates live dynamic experience from career start: June 1, 2022 (IST)
    Format: X Years : X Months : X Days : X Hours : X Minutes : X Seconds
    ========================================================================== */
 function initLiveExperienceCounter() {
@@ -1128,8 +1128,8 @@ function initLiveExperienceCounter() {
 
   if (!elYears || !elMonths || !elDays || !elHours || !elMinutes || !elSeconds) return;
 
-  // Career inception anchor: November 1, 2022 00:00:00 IST
-  const startDate = new Date(2022, 10, 1, 0, 0, 0);
+  // Career inception anchor: June 1, 2022 00:00:00 IST
+  const startDate = new Date(2022, 5, 1, 0, 0, 0);
 
   function getISTDate(date) {
     const utc = date.getTime() + (date.getTimezoneOffset() * 60000);
